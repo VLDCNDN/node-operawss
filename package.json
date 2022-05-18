@@ -1,0 +1,27 @@
+{
+  "name": "node-operawss",
+  "version": "1.0.0",
+  "description": "for requesting in opera pms using nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VLDCNDN/node-operawss.git"
+  },
+  "keywords": [
+    "nodejs",
+    "opera",
+    "pms",
+    "oracle",
+    "hotel",
+    "management"
+  ],
+  "author": "vlad",
+  "license": "Apache License",
+  "bugs": {
+    "url": "https://github.com/VLDCNDN/node-operawss/issues"
+  },
+  "homepage": "https://github.com/VLDCNDN/node-operawss#readme"
+}
