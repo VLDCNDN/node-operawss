@@ -1,5 +1,5 @@
 {
-  "name": "node-operawss",
+  "name": "@username/node-operawss",
   "version": "1.0.0",
   "description": "for requesting in opera pms using nodejs",
   "main": "index.js",
@@ -18,10 +18,14 @@
     "hotel",
     "management"
   ],
-  "author": "vlad",
-  "license": "Apache License",
+  "author": "Vlladie Condeno",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/VLDCNDN/node-operawss/issues"
   },
-  "homepage": "https://github.com/VLDCNDN/node-operawss#readme"
+  "homepage": "https://github.com/VLDCNDN/node-operawss#readme",
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "mocha": "^10.0.0"
+  }
 }
