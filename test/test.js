@@ -18,7 +18,7 @@ describe("Main ", function () {
           username: "Username",
           password: "Password",
         })
-      ).to.deep.an('object');
+      ).to.deep.an("object");
       expect(
         app({
           url: "https://url.com",
@@ -43,16 +43,18 @@ describe("Main ", function () {
     });
   });
 
-  describe("FetcBooking", function () {
+  describe("FetchBookingRequest", function () {
     it("should be return what inputted", function () {
       const data = app({
         url: "test",
         propertyCode: "TESTT",
         username: "Username",
         password: "Password",
+        wsseUsername: "Test",
+        wssePassword: "Test2"
       });
-      expect(data.FetchBooking.byConfno(1)).to.equal(1);
-      expect(data.FetchBooking.byConfno(2)).to.not.equal(1);
+      console.log(data.Reservation().FetchBooking.byConfirmationNumber(1).raw());
+      // expect(data.Reservation().FetchBooking.byConfirmationNumber(1)).to.be.an('string');
     });
   });
 });

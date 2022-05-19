@@ -1,4 +1,5 @@
 /**
+ * Note: not inserting wsse credential will be considered as local opera, meaning no wsseSecurity in header
  * @param {Object} config - configuration that contains credentials and url's to connect in opera
  * @param {String} config.url - complete url for cloud opera
  * @param {String} config.propertyCode - property code or company code
@@ -11,6 +12,8 @@
  * @returns Object
  */
 module.exports = function (config) {
+  const wsdl = require("./wsdl");
+
   if (
     config === undefined ||
     config === null ||
@@ -29,11 +32,7 @@ module.exports = function (config) {
     return { message: "Please enter required param" };
   }
 
-  return {
-    FetchBooking: {
-      byConfno: function (confirmationNumber) {
-        return confirmationNumber;
-      },
-    },
-  };
+  global.config = config;
+
+  return wsdl;
 };
