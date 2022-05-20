@@ -1,4 +1,4 @@
-const FetchBooking = require("./reservation/fetch-booking-request");
+const FetchBooking = require("./reservation/fetch-booking");
 
 const Reservation = function() {
   return {

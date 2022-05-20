@@ -1,5 +1,6 @@
 const processHeader = (config) => {
   const currentDate = new Date().toISOString();
+  const transactionId = Date.parse(currentDate);
   let header = "";
 
   if (config.wssePassword !== undefined && config.wsseUsername !== undefined) {
@@ -15,7 +16,7 @@ const processHeader = (config) => {
       </wsse:Security>`;
   }
 
-  header += `<OGHeader transactionID="20211221115011" primaryLangID="E" timeStamp="${currentDate}" xmlns="http://webservices.micros.com/og/4.3/Core/">
+  header += `<OGHeader transactionID="${transactionId}" primaryLangID="E" timeStamp="${currentDate}" xmlns="http://webservices.micros.com/og/4.3/Core/">
         <Origin entityID="KIOSK" systemType="KIOSK" />
         <Destination entityID="TI" systemType="PMS" />
         <Authentication>
@@ -31,7 +32,9 @@ const processHeader = (config) => {
 };
 
 module.exports = function (body) {
-  
+  // 
+
+  // process request body
   let data = `<?xml version="1.0" encoding="utf-8"?>
   <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:c="http://webservices.micros.com/og/4.3/Common/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:r="http://webservices.micros.com/og/4.3/Reservation/" xmlns:hc="http://webservices.micros.com/og/4.3/HotelCommon/" xmlns:n="http://webservices.micros.com/og/4.3/Name/">
       <soap:Header>
@@ -41,9 +44,9 @@ module.exports = function (body) {
           ${body}
       </soap:Body>
   </soap:Envelope>`;
-  
+
   // TODO: add header here and process url
   return {
-    data
+    body: data
   };
 };

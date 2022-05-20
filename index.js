@@ -19,7 +19,7 @@ module.exports = function (config) {
     config === null ||
     Object.entries(config).length === 0
   ) {
-    return { message: "Please enter config" };
+    return { errorMessage: "Please enter config" };
   }
 
   if (
@@ -29,7 +29,7 @@ module.exports = function (config) {
     (!config.hasOwnProperty("username") && config.username === undefined) ||
     (!config.hasOwnProperty("password") && config.password === undefined)
   ) {
-    return { message: "Please enter required param" };
+    return { errorMessage: "Please enter required param" };
   }
 
   global.config = config;
